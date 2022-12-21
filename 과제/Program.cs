@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace test1
+﻿namespace 과제
 {
     internal class Program
     {
