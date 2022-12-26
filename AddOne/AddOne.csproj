@@ -7,11 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Class1.cs" />
-    <Compile Remove="MineGame.cs" />
-    <Compile Remove="Program.cs" />
-    <Compile Remove="TicTaToe.cs" />
-  </ItemGroup>
-
 </Project>
