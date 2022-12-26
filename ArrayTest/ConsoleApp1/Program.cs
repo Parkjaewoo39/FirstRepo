@@ -19,7 +19,9 @@ namespace ArrayTest
             //    - hint Length 비교를 한다던지 ?
 
 
-            string strUser = String.Empty;
+            string strUser = String.Empty;                  //문자열 비교를 위해 string 형식으로 담는데
+                                                            //
+
             Console.WriteLine("문자를 입력하시오 :");
             strUser = Console.ReadLine();
 
