@@ -58,6 +58,7 @@ namespace peopleshift
                     {
                         gameBoard[y, x] = -2;
                         //가변쪽이 □
+                        Console.WriteLine(gameBoard[y, x]);
                     }
                     //가변쪽이 아니면 *별
 
