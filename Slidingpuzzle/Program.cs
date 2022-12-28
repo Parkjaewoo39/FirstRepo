@@ -39,20 +39,20 @@ namespace Slidingpuzzle
             
             //컨티뉴
 
-            int counter = 0;
+            //int counter = 0;
 
-            while (counter<13)
-            {
-                counter++;
-                if (counter % 3 == 0) 
-                {
-                    continue;
-                    //continue를 만나면 다시 가까운while로 돌아가서 실행.
-                }
-                Console.WriteLine(counter);
-                Console.WriteLine("으앙 전 짝수일때 씹혀요");
+            //while (counter<13)
+            //{
+            //    counter++;
+            //    if (counter % 3 == 0) 
+            //    {
+            //        continue;
+            //        //continue를 만나면 다시 가까운while로 돌아가서 실행.
+            //    }
+            //    Console.WriteLine(counter);
+            //    Console.WriteLine("으앙 전 짝수일때 씹혀요");
 
-            }
+            //}
 
             /**
              * 슬라이딩 퍼즐 프로그램 작성하기
