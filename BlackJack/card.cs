@@ -20,7 +20,14 @@ namespace BlackJack
 
 
             while (true)
-            {                
+            {
+                Console.WriteLine("※***********************※");
+                Console.WriteLine("※     카드 뽑기 게임    ※");
+                Console.WriteLine("※***********************※");
+                
+                Console.WriteLine("※   상대 컴퓨터의 턴    ※");
+                
+
                 trumpCard.ShuffleCards();
                 int comOneCard = trumpCard.ComputerCard(0);
                 int comTwoCard = trumpCard.ComputerCard(1);

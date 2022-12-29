@@ -108,6 +108,12 @@ namespace BlackJack
     }
     public class TrumpCard
     {
+        public TrumpCard() 
+        {
+            SetupTrumpCards();
+        }
+        
+
         private int[] trumpCardSet;      //내가 사용할 카드 세트
         private string[] trumpCardMark;  // 트러픔 카드의 마크
 

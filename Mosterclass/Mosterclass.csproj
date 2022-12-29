@@ -7,10 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="card.cs" />
-    <Compile Remove="Program.cs" />
-    <Compile Remove="TrumpCard.cs" />
-  </ItemGroup>
-
 </Project>
