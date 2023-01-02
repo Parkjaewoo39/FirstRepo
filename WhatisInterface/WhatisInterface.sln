@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJack", "BlackJack.csproj", "{9243EA07-267A-47FD-AFFF-67FA42529034}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatisInterface", "WhatisInterface.csproj", "{AC861E29-D0B4-429A-BBC3-82295D53F094}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9243EA07-267A-47FD-AFFF-67FA42529034}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9243EA07-267A-47FD-AFFF-67FA42529034}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9243EA07-267A-47FD-AFFF-67FA42529034}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9243EA07-267A-47FD-AFFF-67FA42529034}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC861E29-D0B4-429A-BBC3-82295D53F094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC861E29-D0B4-429A-BBC3-82295D53F094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC861E29-D0B4-429A-BBC3-82295D53F094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC861E29-D0B4-429A-BBC3-82295D53F094}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {31863DBB-31DF-4EE6-853A-9877AFEA6121}
+		SolutionGuid = {645C96CC-294C-4099-BD46-8DEF65F93955}
 	EndGlobalSection
 EndGlobal
