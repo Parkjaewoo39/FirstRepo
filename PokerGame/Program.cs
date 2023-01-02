@@ -8,14 +8,23 @@ namespace PokerGame
         {
             TrumpCard trumpCard = new TrumpCard();
             trumpCard.SetupTrumpCards();
+<<<<<<< HEAD
             int checkCard = 0;
+=======
+
+>>>>>>> ccdb80088b1eac270c71eab8e7d224f757f52852
 
             int playerPoint = 10000;
 
             int playerInput = 0;
 
+<<<<<<< HEAD
             int[] playerDrawCard = new int[5];  //플레이어 교체할 카드 선택을 위한 카드 자리 값 배열
             int[] computerDrawCard = new int[7];
+=======
+
+
+>>>>>>> ccdb80088b1eac270c71eab8e7d224f757f52852
 
 
             while (true)
@@ -35,26 +44,43 @@ namespace PokerGame
 
                 trumpCard.ShuffleCards();
 
+<<<<<<< HEAD
                 trumpCard.DrawFiveCard(0); //컴퓨터 5장
+=======
+                trumpCard.ComputerCard(0); //컴퓨터 5장
+>>>>>>> ccdb80088b1eac270c71eab8e7d224f757f52852
 
                 Console.WriteLine("플레이어의 카드 드로우 차례\n내 카드를 확인 할려면 아무키나 입력하시오.");
                 tabInput = Console.ReadLine();
 
 
+<<<<<<< HEAD
                 trumpCard.DrawFiveCard(5);   //플레이어 5장
+=======
+                trumpCard.ComputerCard(5);   //플레이어 5장
+>>>>>>> ccdb80088b1eac270c71eab8e7d224f757f52852
 
 
 
                 Console.Write("\n배팅 금을 입력하시오: 패쓰는 0 을 입력하시오.");
+<<<<<<< HEAD
                 Console.WriteLine("보유 칩 {0}  ", playerPoint);
                 playerInput = Convert.ToInt32(Console.ReadLine());
                 if (playerInput == 0)
                 {
                     Console.WriteLine("배팅을 하지 않아서 다음 게임을 진행합니다.\n 보유 칩 {0}",playerPoint);
+=======
+                Console.WriteLine("현재 소지 배팅금 {0} ", playerPoint);
+                playerInput = Convert.ToInt32(Console.ReadLine());
+                if (playerInput == 0)
+                {
+
+>>>>>>> ccdb80088b1eac270c71eab8e7d224f757f52852
                 }
                 else
                 {
 
+<<<<<<< HEAD
 
                     Console.WriteLine("컴퓨터가 두 장을 뽑습니다.\n컴퓨의 패");
                     trumpCard.DrawFiveCard(0);
@@ -121,6 +147,15 @@ namespace PokerGame
                     }
 
                     /*
+=======
+                    Console.WriteLine("컴퓨터가 두 장을 뽑습니다.");
+                    trumpCard.TwoCard(10);
+
+                    Console.WriteLine("카드 두장을 교체 하시겠습니까?: ");
+                    int.TryParse(Console.ReadLine(), out playerInput);
+
+
+>>>>>>> ccdb80088b1eac270c71eab8e7d224f757f52852
                     //int usercard = trumpCard.ComputerCard(2);
                     //if ((comOneCard < usercard && usercard < userCard) || (userCard < usercard && usercard < comOneCard))
                     //{
@@ -136,21 +171,37 @@ namespace PokerGame
 
                     //    playerPoint -= playerInput;
 
+<<<<<<< HEAD
                     //}*/
+=======
+                    //}
+>>>>>>> ccdb80088b1eac270c71eab8e7d224f757f52852
 
                 }
                 if (playerPoint >= 100000)
                 {
+<<<<<<< HEAD
 
                     Console.WriteLine("\tYOU WIN!");
 
+=======
+                   
+                    Console.WriteLine("\tYOU WIN!");
+                   
+>>>>>>> ccdb80088b1eac270c71eab8e7d224f757f52852
                     break;
                 }
                 else if (playerPoint == 0)
                 {
+<<<<<<< HEAD
 
                     Console.WriteLine("최소 배팅금이 없습니다. 패배!");
 
+=======
+                    
+                    Console.WriteLine("최소 배팅금이 없습니다. 패배!");
+                    
+>>>>>>> ccdb80088b1eac270c71eab8e7d224f757f52852
                     break;
                 }
 

@@ -106,6 +106,22 @@ namespace peopleMovingTwo
         }
         public static void ColorFullString()
         {
+            SeeColorText("\tC", ConsoleColor.Red);
+            SeeColorText("o", ConsoleColor.Green);
+            SeeColorText("i", ConsoleColor.Yellow);
+            SeeColorText("n ", ConsoleColor.Blue);
+            SeeColorText("A", ConsoleColor.Magenta);
+            SeeColorText("n", ConsoleColor.Cyan);
+            SeeColorText("d ", ConsoleColor.DarkRed);
+            SeeColorText("M", ConsoleColor.Green);
+            SeeColorText("o", ConsoleColor.DarkRed);
+            SeeColorText("v", ConsoleColor.DarkGray);
+            SeeColorText("i", ConsoleColor.Yellow);
+            SeeColorText("n", ConsoleColor.DarkGray);
+            SeeColorText("g\n", ConsoleColor.DarkBlue);
+            
+
+            /*
             Console.ForegroundColor = ConsoleColor.Red;
             
             Console.Write("\tC");
@@ -170,6 +186,7 @@ namespace peopleMovingTwo
             
             Console.WriteLine("g");
             Console.ForegroundColor = ConsoleColor.White;
+            */
 
 
         }
