@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WhatIsDelegate
 {
+    
     public class Description
     {
             //void 리턴타입과, 매개 변수를 받지 안흔 함수를 저장할 수 있는 
@@ -40,8 +41,8 @@ namespace WhatIsDelegate
             //delegate void SayDelegate();
             //void 타입의 ()값을
 
-
-
+            
+            
             SayDelegate sayDelegate = Hi;
 
             sayDelegate.Invoke();
