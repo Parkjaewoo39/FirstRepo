@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using System.Linq.Expressions;
+
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +12,7 @@ namespace PokerGame
 
     public class TrumpCard
     {
+
         private int[] trumpCardSet;      //내가 사용할 카드 세트
         private string[] trumpCardMark;  // 트러픔 카드의 마크
 
@@ -33,13 +36,22 @@ namespace PokerGame
         //! 한장의 카드를 뽑아서 보여주는 함수
 
         //!셔플 하고서 카드를 한 장 뽑아서 출력하는 함수
+
         //public void DrawCard()
         //{
         //    ShuffleCards();
         //    ComputerCard(200);
         //}   //ReRollCard()
 
+
+
+
+
+        //!5개 뽑는식
+
+
         public void DrawFiveCard(int comValue)      //5개 뽑는식 
+
         {
             int[] cardArray = new int[comValue + 5];
             //int[] cardNumberArray = new int[comValue + 5];
@@ -57,8 +69,6 @@ namespace PokerGame
                 cardNumber[i] = Math.Ceiling(cardArray[i] % 13.1).ToString();
 
                 //cardValue = (int)Math.Ceiling(card % 13.1);
-                //comValue++;
-
 
 
                 switch (cardNumber[i])
@@ -78,6 +88,7 @@ namespace PokerGame
             }
 
             Console.WriteLine("뽑은 카드는 {0} {1} {2} {3} {4} {5} {6} {7} {8} {9}입니다."
+
                 , cardMark[comValue + 0], cardNumber[comValue + 0], cardMark[comValue + 1], cardNumber[comValue + 1], cardMark[comValue + 2],
                 cardNumber[comValue + 2], cardMark[comValue + 3], cardNumber[comValue + 3], cardMark[comValue + 4], cardNumber[comValue + 4]);
             Console.WriteLine(" -----  -----  -----  -----  ----- ");
@@ -88,22 +99,74 @@ namespace PokerGame
             Console.WriteLine("|    | |    | |    | |    | |    |");
             Console.WriteLine("|{1} {0}| |{3} {2}| |{5} {4}| |{7} {6}| |{9} {8}|",
                 cardMark[comValue + 0], cardNumber[comValue + 0], cardMark[comValue + 1], cardNumber[comValue + 1],
-                cardMark[comValue + 2], cardNumber[comValue + 2], cardMark[comValue + 3], cardNumber[comValue + 3],
-                cardMark[comValue + 4], cardNumber[comValue + 4]);
+                cardMark[comValue + 2], cardNumber[comValue + 2], cardMark[comValue + 3], cardNumber[comValue + 3], cardMark[comValue + 4], cardNumber[comValue + 4]);
             Console.WriteLine(" -----  -----  -----  -----  ----- ");
 
-        }   //RollCard
+
+        }   //DrawFiveCard() 5장뽑는 함수 
 
 
+        //!플레이어 카드 값과 바뀐 카드를 보기위한 함수
+        public void PlayerFiveCardValue(int comValue1, int comValue2, int comValue3, int comValue4, int comValue5)
+        {
+            int[] cardArray = new int[5] { comValue1, comValue2, comValue3, comValue4, comValue5 };
+
+            string[] cardMark = new string[5];
+            string[] cardNumber = new string[5];
+            //카드 숫자와 카드 문양을 배열에 담는데 
+
+            int cardValue = 0;
+
+            for (int i = 0; i < 5; i++)
+            {
+
+                cardMark[i] = trumpCardMark[(cardArray[i] - 1) / 13];
+                cardNumber[i] = Math.Ceiling(cardArray[i] % 13.1).ToString();
+
+                //cardValue = (int)Math.Ceiling(card % 13.1);
 
 
-        public void TwoCard(int comValue)
+                switch (cardNumber[i])
+                {
+                    case "11":
+                        cardNumber[i] = "J";
+                        break;
+                    case "12":
+                        cardNumber[i] = "Q";
+                        break;
+                    case "13":
+                        cardNumber[i] = "K";
+                        break;
+
+                }
+
+            }
+
+            Console.WriteLine("뽑은 카드는 {0} {1} {2} {3} {4} {5} {6} {7} {8} {9}입니다."
+                , cardMark[0], cardNumber[0], cardMark[1], cardNumber[1], cardMark[2],
+                cardNumber[2], cardMark[3], cardNumber[3], cardMark[4], cardNumber[4]);
+            Console.WriteLine(" -----  -----  -----  -----  ----- ");
+            Console.WriteLine("|{0} {1}| |{2} {3}| |{4} {5}| |{6} {7}| |{8} {9}|",
+                cardMark[0], cardNumber[0], cardMark[1], cardNumber[1],
+                cardMark[2], cardNumber[2], cardMark[3], cardNumber[3],
+                cardMark[4], cardNumber[4]);
+            Console.WriteLine("|    | |    | |    | |    | |    | ");
+            Console.WriteLine("|{1} {0}| |{3} {2}| |{5} {4}| |{7} {6}| |{9} {8}|",
+                cardMark[0], cardNumber[0], cardMark[1], cardNumber[1],
+                cardMark[2], cardNumber[2], cardMark[3], cardNumber[3],
+                cardMark[4], cardNumber[4]);
+            Console.WriteLine(" -----  -----  -----  -----  ----- ");
+
+        }   //DrawFiveCard() 5장뽑는 함수 
+
+
+        //! 2장씩 뽑는거
+        public void DrawTwoCard(int comValue)
         {
             int[] cardArray = new int[comValue + 2];
             //int[] cardNumberArray = new int[comValue + 5];
             string[] cardMark = new string[comValue + 2];
             string[] cardNumber = new string[comValue + 2];
-            //카드 숫자와 카드 문양을 배열에 담는데 
 
             int cardValue = 0;
 
@@ -116,8 +179,6 @@ namespace PokerGame
 
                 //cardValue = (int)Math.Ceiling(card % 13.1);
                 //comValue++;
-
-
 
                 switch (cardNumber[i])
                 {
@@ -138,13 +199,73 @@ namespace PokerGame
             Console.WriteLine("뽑은 카드는 {0} {1} {2} {3}입니다."
                 , cardMark[comValue + 0], cardNumber[comValue + 0], cardMark[comValue + 1], cardNumber[comValue + 1]);
             Console.WriteLine(" -----  ----- ");
-            Console.WriteLine("|{0} {1}|\t|{2} {3}|",
+
+            Console.WriteLine("|{0} {1}\t|{2} {3}| ",
                 cardMark[comValue + 0], cardNumber[comValue + 0], cardMark[comValue + 1], cardNumber[comValue + 1]);
-            Console.WriteLine("|    |\t|    | ");
+            Console.WriteLine("|    |\t|    |  ");
             Console.WriteLine("|{1} {0}|\t|{3} {2}|",
+
                 cardMark[comValue + 0], cardNumber[comValue + 0], cardMark[comValue + 1], cardNumber[comValue + 1]);
             Console.WriteLine(" -----  ----- ");
-        }   //RollCard
+        }   //TwoCard
+
+        //! 1장씩 뽑는거
+        public int DrawOneCard(int comValue)
+        {
+            int[] cardArray = new int[comValue + 1];
+            //int[] cardNumberArray = new int[comValue + 5];
+            string[] cardMark = new string[comValue + 1];
+            string[] cardNumber = new string[comValue + 1];
+
+            int cardValue = 0;
+
+            for (int i = comValue; i < comValue + 1; i++)
+            {
+                cardArray[i] = trumpCardSet[i];
+
+                cardMark[i] = trumpCardMark[(cardArray[i] - 1) / 13];
+                cardNumber[i] = Math.Ceiling(cardArray[i] % 13.1).ToString();
+
+                //cardValue = (int)Math.Ceiling(card % 13.1);
+                //comValue++;
+
+                switch (cardNumber[i])
+                {
+                    case "11":
+                        cardNumber[i] = "J";
+                        break;
+                    case "12":
+                        cardNumber[i] = "Q";
+                        break;
+                    case "13":
+                        cardNumber[i] = "K";
+                        break;
+
+                }
+
+            }
+
+            Console.WriteLine("뽑은 카드는 {0} {1} 입니다."
+                , cardMark[comValue], cardNumber[comValue]);
+            Console.WriteLine(" -----  ");
+            Console.WriteLine("|{0} {1}| ",
+                cardMark[comValue], cardNumber[comValue]);
+            Console.WriteLine("|    |");
+            Console.WriteLine("|{1} {0}| ",
+                cardMark[comValue], cardNumber[comValue]);
+            Console.WriteLine(" ----- ");
+            return cardArray[comValue];
+
+        }   //oneCard
+
+        //! 1장씩 뽑는 값
+        public int DrawOneCardValue(int comValue)       //덱set의 순서에 카드 한장의 값을 리턴해서 담은 함수
+        {
+
+            int a = trumpCardSet[comValue];
+            return a;
+
+        }   //DrawOneCardValue
 
 
         public void FiveCardArray(int cardOne, int cardTwo, int cardThree, int cardFour, int cardFive)  //카드 교체 배열값 담기
@@ -186,13 +307,13 @@ namespace PokerGame
 
 
                 Console.WriteLine("뽑은 카드는 {0} {1} {2} {3} {4} {5} {6} {7} {8} {9}입니다."
-                    , cardMark[ 0], cardNumber[ 0], cardMark[ 1], cardNumber[ 1], cardMark[ 2],
-                    cardNumber[+ 2], cardMark[ 3], cardNumber[ 3], cardMark[ 4], cardNumber[ 4]);
+                    , cardMark[0], cardNumber[0], cardMark[1], cardNumber[1], cardMark[2],
+                    cardNumber[+2], cardMark[3], cardNumber[3], cardMark[4], cardNumber[4]);
                 Console.WriteLine(" -----  -----  -----  -----  ----- ");
                 Console.WriteLine("|{0} {1}| |{2} {3}| |{4} {5}| |{6} {7}| |{8} {9}|",
-                    cardMark[ 0], cardNumber[ 0], cardMark[ 1], cardNumber[ 1],
-                    cardMark[ 2], cardNumber[ 2], cardMark[ 3], cardNumber[ 3],
-                    cardMark[ 4], cardNumber[ 4]);
+                    cardMark[0], cardNumber[0], cardMark[1], cardNumber[1],
+                    cardMark[2], cardNumber[2], cardMark[3], cardNumber[3],
+                    cardMark[4], cardNumber[4]);
                 Console.WriteLine("|    | |    | |    | |    | |    |");
                 Console.WriteLine("|{1} {0}| |{3} {2}| |{5} {4}| |{7} {6}| |{9} {8}|",
                     cardMark[0], cardNumber[0], cardMark[1], cardNumber[1],
@@ -200,11 +321,11 @@ namespace PokerGame
                     cardMark[4], cardNumber[4]);
                 Console.WriteLine(" -----  -----  -----  -----  ----- ");
 
-                for (int index = 0; index < 5; index++) 
+                for (int index = 0; index < 5; index++)
                 {
                     Console.WriteLine("교체할 카드는 {0} {1}", cardMark[i], cardNumber[i]);
                     Console.WriteLine();
-                    
+
                 }
             }
         }       //FiveCardDarw
@@ -238,16 +359,17 @@ namespace PokerGame
             } // switch
 
 
-            Console.WriteLine(" ----");
-            Console.WriteLine("|{0}{1} |", cardMark, cardNumber);
+            Console.WriteLine(" ---- ");
+            Console.WriteLine("|{0} {1}|", cardMark, cardNumber);
             Console.WriteLine("|    |");
-            Console.WriteLine("| {0}{1}|", cardNumber, cardMark);
-            Console.WriteLine(" ----");
+            Console.WriteLine("|{0} {1}|", cardNumber, cardMark);
+            Console.WriteLine(" ---- ");
             Console.WriteLine("뽑은 카드는 {0}{1} 입니다.", cardMark, cardNumber);
 
             return card;
 
         }// 
+
 
         public void PrintCardSet()
         {
