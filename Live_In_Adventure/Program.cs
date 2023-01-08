@@ -9,7 +9,7 @@ namespace Live_In_Adventure
         {
             User user = new User();
 
-                                  
+             
             //{!게임 실행
             while (true)
             {
@@ -43,14 +43,18 @@ namespace Live_In_Adventure
                 //!}유저의 이름 입력
 
                 Console.WriteLine("??? : 어이!, {0}! 여기서 또 잠들어 있구만.", userNameInput);
-                Console.WriteLine("{0} : (깨질듯한 두통", userNameInput);
+                
 
                 //}!타이틀 구현
 
                 Console.WriteLine("{0}", userNameInput);
                 user.userStatus();
                 user.userHp();
+                //user.userHpMax();
+                Console.WriteLine();
                 user.userMental();
+
+
 
                 //!{유저 이름 체력 정신력
                 string userName;
