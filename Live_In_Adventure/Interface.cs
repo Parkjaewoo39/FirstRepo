@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace Live_In_Adventure
 {
+
+    
     
     public class Interface
     { }
@@ -40,52 +42,51 @@ namespace Live_In_Adventure
         }   //userStatus()
         public void userHp() 
         {
-            int userHpMax = 100;
             int userHp = 100;
+            int userHpMax = userHp;
             int playerHpPer = userHp * 100 / userHp;
-            Console.WriteLine("체력 :{0}/{1}",userHp,userHpMax);
+            Console.Write("체력 :{0}/{1}",userHp,userHpMax);
+            Console.SetCursorPosition(2, 54);
             for (int i = 0; i < playerHpPer / 10; i++)             
             {
                 Console.Write("■");                
             }     
             for (int i = 10; playerHpPer / 10 < i ; i -= 1)
             {
-                Console.Write("□"); 
+                Console.Write("□");               
             }
-        }       //userHP()
-                   
+        }       //userHP()                   
 
         public void userMental() 
         {
             int userMental = 5;
             int userMentalMax = userMental;
-            Console.WriteLine("정신력 : {0}/{1}",userMental,userMentalMax);
+            Console.Write("정신력 : {0}/{1}\n",userMental,userMentalMax);
+            Console.SetCursorPosition(2, 56);
             for (int i = 0; i < userMental; i++) 
-            {
-                
+            {                
                 Console.Write("●");
             }
             for (int i = 5; userMental< i; i -= 1)
             {
-                Console.Write("○");
+                Console.Write("◎");
             }
-        }       //유저Mental()함수
+            Console.WriteLine();
+        }       //유저Mental()함수       
         
-        
-
     }   //class User
 
+    /*
+    //public class Inventory
+    //{
 
-    public class Inventory
-    {
-        
-        public void useInventory()
-        {
-            List<string, int> inventory = new List<string, int>();
+    //    public void useInventory()
+    //    {
+    //        List<string, int> inventory = new List<string, int>();
 
-        }
+    //    }
 
-    }
+    //}
     //public class Inventory 
     //{
     //    Dictionary<string, int> inventory = new Dictionary<string, int>();
@@ -103,16 +104,8 @@ namespace Live_In_Adventure
     //            inventory[keys_] 
     //        }
     //    }
-
-
-    /*
-     *  static void Main(string[] args)
-        {
-            Command Command = new Command();
-            Inventory inventory = new Inventory();
-            Shop shop = new Shop();
-            Console.ReadKey();
-        }
+    */
+    //!{class Item
     class Item
     {
         public string name;
@@ -142,7 +135,8 @@ namespace Live_In_Adventure
             this.options = item.options;
             count = 1;
         }
-    }
+    }   
+    //!}class Item
 
     class Inventory
     {
@@ -225,22 +219,22 @@ namespace Live_In_Adventure
                 }
                 else if (input == "4")
                 {
-                    Console.WriteLine("이전단계(네/아니오)");
-                    string askOpinion = Console.ReadLine();
-                    if (askOpinion == "네")
-                    {
-                        Console.WriteLine("이전 단계로 이동");
-                        Console.ReadKey();
-                        break;
-                    }
-                    else if (askOpinion == "아니오")
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        Console.WriteLine("잘못입력");
-                    }
+                    break;
+                    //Console.WriteLine("이전단계(네/아니오)");
+                    //string askOpinion = Console.ReadLine();
+                    //if (askOpinion == "네")
+                    //{
+                    //    Console.WriteLine("이전 단계로 이동");
+                    //    Console.ReadKey();
+                    //}
+                    //else if (askOpinion == "아니오")
+                    //{
+                    //    continue;
+                    //}
+                    //else
+                    //{
+                    //    Console.WriteLine("잘못입력");
+                    //}
                 }
                 else
                 {
@@ -257,7 +251,7 @@ namespace Live_In_Adventure
             while (true)
             {
                 Console.WriteLine("============메인 메뉴===========");
-                Console.WriteLine("1. 인벤토리 확인\n2. 상점으로 이동\n3. 알바하기\n4. 프로그램을 종료합니다.");
+                Console.WriteLine("1. 인벤토리 확인\n2. 상점으로 이동\n3. 프로그램을 종료합니다.");
                 Console.WriteLine("================================");
                 Console.Write("입력 :");
                 string input = Console.ReadLine();
@@ -268,12 +262,8 @@ namespace Live_In_Adventure
                 else if (input == "2")
                 {
                     shop.ShopMenu();
-                }
+                }              
                 else if (input == "3")
-                {
-                    shop.Job();
-                }
-                else if (input == "4")
                 {
                     Console.WriteLine("프로그램을 종료하시겠습니까?(네/아니오)");
                     string select = Console.ReadLine();
@@ -307,7 +297,7 @@ namespace Live_In_Adventure
         public Shop()
         {
             shopItemList = new List<Item>();
-            shopItemList.Add(new Item("지팡이", 50, "마법사가 애용할 것만 같은 나무로된 지팡이"));
+            shopItemList.Add(new Item("부서진 대검", 50, "마법사가 애용할 것만 같은 나무로된 지팡이"));
             shopItemList.Add(new Item("장검", 80, "긴검"));
             shopItemList.Add(new Item("단검", 20, "짧은검"));
             shopItemList.Add(new Item("활", 100, "당겨서 쏘는 목재의 탄성을 확인할 수 있는 장인의 활..."));
@@ -344,11 +334,11 @@ namespace Live_In_Adventure
                 return false;
             }
         }
-        public void Job()
-        {
-            money += 100;
-            Console.WriteLine($"알바를 해서 {money}골드가 지급됩니다.");
-        }
+        //public void Job()
+        //{
+        //    money += 100;
+        //    Console.WriteLine($"알바를 해서 {money}골드가 지급됩니다.");
+        //}
         public void ItemBuy(Item foundItem)
         {
             //
@@ -378,6 +368,11 @@ namespace Live_In_Adventure
                 myMoney((int)(Item.price * 0.7));
                 Console.WriteLine($"{(Item.price * 0.7)}골드에 {Item.name}을 판매했습니다.");
                 shopItemList.Remove(Item);
+            }
+            else 
+            {
+                Console.WriteLine("제대로 입력 하시오 ");
+                
             }
         }
         public void ShopMenu()
@@ -437,22 +432,22 @@ namespace Live_In_Adventure
                 }
                 else if (select == "5")
                 {
-                    Console.WriteLine("이전단계로 가시겠습니까?(네/아니오)");
-                    string input = Console.ReadLine();
-                    if (input == "네")
-                    {
-                        break;
-                    }
-                    else if (input == "아니오")
+                       break;
+                    //Console.WriteLine("이전단계로 가시겠습니까?");
+                    //string input = Console.ReadLine();
+                    //if (input == "네")
+                    //{
+                    //}
+                    //else if (input == "아니오")
  
-                    {
-                        continue;
-                    }
+                    //{
+                    //    continue;
+                    //}
                 }
             }
         }
     }
-     */
+     
 
     //}
 

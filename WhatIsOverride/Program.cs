@@ -20,11 +20,11 @@ namespace WhatIsOverride
             //child.Run();
             //child.Walk();
 
-            //StoreButton storeButton = new StoreButton();
-            //storeButton.OnClickButton();
+            StoreButton storeButton = new StoreButton();
+            storeButton.OnClickButton();
             BigBear bigbear = new BigBear();
             //bigbear.Name = "이거 사실 슬라임 아닌데";//왼쪽의 무엇이 임시로 담길 곳이 properti의 value 키워드
-            Console.WriteLine(bigbear.Name);
+            
 
         }
     }

@@ -15,7 +15,7 @@ namespace WhatIsOverride
             public int bighp;
             public int bigdamage;
             public int bigdefence;
-            public string bigsound;
+           // public string bigsound;
 
             public void BigMove(string move)
             {
@@ -58,10 +58,7 @@ namespace WhatIsOverride
             {
                 return this.bigdefence;
             }
-            public string BigSoundValue()
-            {
-                return this.bigsound;
-            }
+          
         }
         public class BigBear : BigMonster
         {
@@ -85,7 +82,7 @@ namespace WhatIsOverride
                 this.bighp = 300;
                 this.bigdamage = 25;
                 this.bigdefence = 5;
-                this.bigsound = "쿠오오오오엉!";
+                
             }
         }
     }       //class Monster
