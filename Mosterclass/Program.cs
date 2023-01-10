@@ -91,7 +91,7 @@ namespace Mosterclass
 
                         playerStatus[0] -= bigMosStatus[1] - playerStatus[2];
 
-                        Console.WriteLine("")
+                        
 
 
                     }
@@ -106,10 +106,8 @@ namespace Mosterclass
                         Console.WriteLine("플레이어는 {0}의 데미지를 받았습니다.", bear.BigDamageValue());
 
                     }
-                    else if()
-                    {
-                        
-                    }
+                   
+
                 }
 
                 else if (userInput2 == 2)

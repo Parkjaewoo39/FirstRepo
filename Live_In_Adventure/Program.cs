@@ -7,28 +7,25 @@ namespace Live_In_Adventure
     {
         static void Main(string[] args)
         {
-            
+
 
             //User user = new User();
             Screen screen = new Screen();
 
+            Console.SetCursorPosition(0, 0);
+            //{!타이틀 구현
+            screen.ScreenTitle();
+
+            Console.SetCursorPosition(0, 0);
+            screen.SetScreen();
+
             //{!게임 실행
             while (true)
-            {
+            {                                
                 Console.SetCursorPosition(0, 0);
-                //{!타이틀 구현
-                screen.ScreenTitle();
-
-                Console.SetCursorPosition(0, 0);
-
-                screen.SetScreen();
-                while (true)
-                {
-                    screen.ScreenGame();
-
-                }
-
+                screen.ScreenGame();               
             }   //Main      
+                
 
         }       //class program
         /*

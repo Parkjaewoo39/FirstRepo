@@ -11,70 +11,74 @@ namespace Live_In_Adventure
 
     
     
-    public class Interface
-    { }
+    public class Interface { }
 
-    public class User
-    {
-        public void userStatus() 
-        {
-            //!{유저 시작 랜덤스탯
-            Random random = new Random();                               //배열에 담은 것을 무작위로 꺼내기위해 난수 선언
-            Random ranStatus = new Random();                            // 각 배열 스테이터스의 최소부터 최대값
+    /*
+    //!{User
+    //public class User
+    //{
+    //    public void userStatus() 
+    //    {
+            
+    //        //!{유저 시작 랜덤스탯
+    //        Random random = new Random();                               //배열에 담은 것을 무작위로 꺼내기위해 난수 선언
+    //        Random ranStatus = new Random();                            // 각 배열 스테이터스의 최소부터 최대값
 
-            int[] charStatus = new int[6] { 5, 5, 5, 5, 5, 5 };         //힘, 민첩, 지능, 카리스마, 건강, 지혜
+    //        int[] charStatus = new int[6] { 5, 5, 5, 5, 5, 5 };         //힘, 민첩, 지능, 카리스마, 건강, 지혜
 
-            int[] statusSum = new int[6];
+    //        int[] statusSum = new int[6];
 
-            for (int index = 0; index < charStatus.Length; index++)
-            {
-                int ranS = ranStatus.Next(0, 5 + 1);
-                statusSum[index] = charStatus[index] + ranS;
-                charStatus[index] = statusSum[index];
-            }
-            Console.WriteLine(
-               "힘 {0} \n" + "민첩 {1}\n" + "지능 {2}\n" +
-               "카리스마 {3} \n" + "건강 {4}\n" + "지혜 {5}\n",
-               charStatus[0], charStatus[1], charStatus[2],
-               charStatus[3], charStatus[4], charStatus[5]);
+    //        for (int index = 0; index < charStatus.Length; index++)
+    //        {
+    //            int ranS = ranStatus.Next(0, 5 + 1);
+    //            statusSum[index] = charStatus[index] + ranS;
+    //            charStatus[index] = statusSum[index];
+    //        }            
+    //        Console.Write(
+    //           "힘 {0} \n" + "민첩 {1}\n" + "지능 {2}\n" +
+    //           "카리스마 {3} \n" + "건강 {4}\n" + "지혜 {5}\n",
+    //           charStatus[0], charStatus[1], charStatus[2],
+    //           charStatus[3], charStatus[4], charStatus[5]);
 
-            //!}유저 시작 랜덤스탯
-        }   //userStatus()
-        public void userHp() 
-        {
-            int userHp = 100;
-            int userHpMax = userHp;
-            int playerHpPer = userHp * 100 / userHp;
-            Console.Write("체력 :{0}/{1}",userHp,userHpMax);
-            Console.SetCursorPosition(2, 54);
-            for (int i = 0; i < playerHpPer / 10; i++)             
-            {
-                Console.Write("■");                
-            }     
-            for (int i = 10; playerHpPer / 10 < i ; i -= 1)
-            {
-                Console.Write("□");               
-            }
-        }       //userHP()                   
+    //        //!}유저 시작 랜덤스탯
+    //    }   //userStatus()
+    //    public void userHp() 
+    //    {
+    //        int userHp = 100;
+    //        int userHpMax = userHp;
+    //        int playerHpPer = userHp * 100 / userHp;
+    //        Console.Write("체력 :{0}/{1}",userHp,userHpMax);
+    //        Console.SetCursorPosition(2, 54);
+    //        for (int i = 0; i < playerHpPer / 10; i++)             
+    //        {
+    //            Console.Write("■");                
+    //        }     
+    //        for (int i = 10; playerHpPer / 10 < i ; i -= 1)
+    //        {
+    //            Console.Write("□");               
+    //        }
+    //    }       //userHP()                   
 
-        public void userMental() 
-        {
-            int userMental = 5;
-            int userMentalMax = userMental;
-            Console.Write("정신력 : {0}/{1}\n",userMental,userMentalMax);
-            Console.SetCursorPosition(2, 56);
-            for (int i = 0; i < userMental; i++) 
-            {                
-                Console.Write("●");
-            }
-            for (int i = 5; userMental< i; i -= 1)
-            {
-                Console.Write("◎");
-            }
-            Console.WriteLine();
-        }       //유저Mental()함수       
+    //    public void userMental() 
+    //    {
+    //        int userMental = 5;
+    //        int userMentalMax = userMental;
+    //        Console.Write("정신력 : {0}/{1}\n",userMental,userMentalMax);
+    //        Console.SetCursorPosition(2, 56);
+    //        for (int i = 0; i < userMental; i++) 
+    //        {                
+    //            Console.Write("●");
+    //        }
+    //        for (int i = 5; userMental< i; i -= 1)
+    //        {
+    //            Console.Write("◎");
+    //        }
+    //        Console.WriteLine();
+    //    }       //유저Mental()함수       
         
-    }   //class User
+    //}   //class User
+        //!}User
+    */
 
     /*
     //public class Inventory
@@ -143,22 +147,44 @@ namespace Live_In_Adventure
         public static List<Item> itemList = new List<Item>();
         public Inventory()
         {
+        Screen screen = new Screen();
+        
             while (true)
             {
+                screen.SetScreen();
+                Console.SetCursorPosition(38, 46);
                 Console.WriteLine("========인벤토리========");
-                Console.WriteLine("1.장비 추가하기 \n2.장비 삭제하기\n3.장비 목록 출력\n4. 이전단계로 이동");
+                Console.SetCursorPosition(38, 47);
+                Console.WriteLine("1.장비 추가하기");
+                Console.SetCursorPosition(38, 48);
+                Console.WriteLine("2.장비 삭제하기");
+                Console.SetCursorPosition(38, 49);
+                Console.WriteLine("3.장비 목록 출력");
+                Console.SetCursorPosition(38, 50);
+                Console.WriteLine("4. 이전단계로 이동");
+
+                Console.SetCursorPosition(38, 51);
                 Console.WriteLine("========================");
+                Console.SetCursorPosition(38, 52);
                 Console.Write("입력 :");
+
                 string input = Console.ReadLine();
                 if (input == "1")
                 {
+                    
+                    screen.SetScreen();
+                    Console.SetCursorPosition(38, 46);
                     Console.WriteLine("장비 추가");
+                    Console.SetCursorPosition(38, 47);
                     Console.WriteLine("추가할 장비를 이름 입력");
+                    Console.SetCursorPosition(38, 48);
                     string ItemType = Console.ReadLine();
                     Item foundItem = itemList.Find(x => x.name == ItemType);
                     if (foundItem == null)
                     {
+                        Console.SetCursorPosition(38, 46);
                         itemList.Add(new Item(ItemType, 0, "장비"));
+                        
                     }
                     else if (foundItem != null)
                     {
@@ -166,24 +192,39 @@ namespace Live_In_Adventure
                     }
                     else
                     {
+                        Console.SetCursorPosition(38, 46);
                         Console.WriteLine("잘못입력");
                     }
                     continue;
                 }
                 if (input == "2")
-                {
+                {                    
+                    screen.SetScreen();
+                    Console.SetCursorPosition(38, 46);
                     Console.WriteLine("===========장비 삭제하기===========");
-                    Console.WriteLine("1. 삭제할 장비명 입력 \n2. 이전단계");
+                    Console.SetCursorPosition(38, 47);
+                    Console.WriteLine("1. 삭제할 장비명 입력");
+                    Console.SetCursorPosition(38, 48);
+                    Console.WriteLine("2. 이전단계");
+                    Console.SetCursorPosition(38, 49);
                     Console.WriteLine("===================================");
+                    Console.SetCursorPosition(38, 50);
                     Console.Write("입력 :");
                     string select = Console.ReadLine();
+                    Console.SetCursorPosition(38, 51);
                     if (select == "1")
                     {
+                        screen.SetScreen();
+                        Console.SetCursorPosition(38, 46);
                         Console.WriteLine("삭제할 장비명 입력");
+                        Console.SetCursorPosition(38, 47);
                         string Delete = Console.ReadLine();
                         Item deleteItem = itemList.Find(x => x.name == Delete);
+
                         if (deleteItem == null)
                         {
+                            screen.SetScreen();
+                            Console.SetCursorPosition(38, 46);
                             Console.WriteLine("장비가 없습니다.");
                             continue;
                         }
@@ -193,6 +234,8 @@ namespace Live_In_Adventure
                         }
                         else if (deleteItem != null)
                         {
+                            
+                            Console.SetCursorPosition(38, 46);
                             Console.WriteLine("{0} 이(가) 삭제되었습니다.", deleteItem.name);
                             itemList.Remove(deleteItem);
                             continue;
@@ -205,42 +248,32 @@ namespace Live_In_Adventure
                 }
                 else if (input == "3")
                 {
+                    screen.SetScreen();
+                    Console.SetCursorPosition(38, 46);
                     Console.WriteLine("//장비 목록//");
                     if (itemList.Count == 0)
                     {
+                        Console.SetCursorPosition(38, 47);
                         Console.WriteLine("장비가 없습니다.");
+                        Console.ReadLine();
                         continue;
                     }
                     for (int i = 0; i < itemList.Count; i++)
                     {
+                        Console.SetCursorPosition(38, 47);
                         Console.WriteLine($"{itemList[i].name} : {itemList[i].count}개");
                     }
                     continue;
                 }
                 else if (input == "4")
                 {
-                    break;
-                    //Console.WriteLine("이전단계(네/아니오)");
-                    //string askOpinion = Console.ReadLine();
-                    //if (askOpinion == "네")
-                    //{
-                    //    Console.WriteLine("이전 단계로 이동");
-                    //    Console.ReadKey();
-                    //}
-                    //else if (askOpinion == "아니오")
-                    //{
-                    //    continue;
-                    //}
-                    //else
-                    //{
-                    //    Console.WriteLine("잘못입력");
-                    //}
+                    break;                    
                 }
                 else
                 {
                     Console.WriteLine("잘못입력");
                 }
-            }
+            }       //Inventory while
         }
     }
     class Command
@@ -297,10 +330,10 @@ namespace Live_In_Adventure
         public Shop()
         {
             shopItemList = new List<Item>();
-            shopItemList.Add(new Item("부서진 대검", 50, "마법사가 애용할 것만 같은 나무로된 지팡이"));
-            shopItemList.Add(new Item("장검", 80, "긴검"));
+             shopItemList.Add(new Item("부서진 대검", 50, "곧 부서질것 같지만 쓸만한 대검"));
+            shopItemList.Add(new Item("장검", 80, "긴 검"));
             shopItemList.Add(new Item("단검", 20, "짧은검"));
-            shopItemList.Add(new Item("활", 100, "당겨서 쏘는 목재의 탄성을 확인할 수 있는 장인의 활..."));
+            shopItemList.Add(new Item("대검", 100, "단단하고 강력한 대검"));
             shopItemList.Add(new Item("지팡이", 50, "마법사가 애용할 것만 같은 나무로된 지팡이"));
             shopItemList.Add(new Item("장검", 80, "긴검"));
             shopItemList.Add(new Item("단검", 20, "짧은검"));
@@ -334,11 +367,7 @@ namespace Live_In_Adventure
                 return false;
             }
         }
-        //public void Job()
-        //{
-        //    money += 100;
-        //    Console.WriteLine($"알바를 해서 {money}골드가 지급됩니다.");
-        //}
+        
         public void ItemBuy(Item foundItem)
         {
             //
