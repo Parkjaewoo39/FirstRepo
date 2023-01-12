@@ -262,6 +262,7 @@ namespace Live_In_Adventure
                     {
                         Console.SetCursorPosition(38, 47);
                         Console.WriteLine($"{itemList[i].name} : {itemList[i].count}개");
+                        Console.ReadLine();
                     }
                     continue;
                 }
@@ -284,7 +285,7 @@ namespace Live_In_Adventure
             while (true)
             {
                 Console.WriteLine("============메인 메뉴===========");
-                Console.WriteLine("1. 인벤토리 확인\n2. 상점으로 이동\n3. 프로그램을 종료합니다.");
+                Console.WriteLine("1. 인벤토리 확인\n2. 상점으로 이동\n3. 나가기");
                 Console.WriteLine("================================");
                 Console.Write("입력 :");
                 string input = Console.ReadLine();
@@ -298,7 +299,7 @@ namespace Live_In_Adventure
                 }              
                 else if (input == "3")
                 {
-                    Console.WriteLine("프로그램을 종료하시겠습니까?(네/아니오)");
+                    Console.WriteLine("나가시겠습니까?(네/아니오)");
                     string select = Console.ReadLine();
                     if (select == "네")
                     {

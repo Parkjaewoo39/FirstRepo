@@ -89,9 +89,7 @@ namespace Mosterclass
                         Console.WriteLine("{0}이(가) 반격을 했습니다.\n", bear.BigMonsterName());
                         Console.WriteLine("플레이어는 {0}의 데미지를 받았습니다.", bear.BigDamageValue());
 
-                        playerStatus[0] -= bigMosStatus[1] - playerStatus[2];
-
-                        
+                        playerStatus[0] -= bigMosStatus[1] - playerStatus[2];                       
 
 
                     }

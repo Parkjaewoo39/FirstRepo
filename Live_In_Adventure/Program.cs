@@ -18,12 +18,14 @@ namespace Live_In_Adventure
 
             Console.SetCursorPosition(0, 0);
             screen.SetScreen();
-
+            
             //{!게임 실행
             while (true)
-            {                                
+            {
+                screen.SetScreen();
                 Console.SetCursorPosition(0, 0);
-                screen.ScreenGame();               
+                screen.ScreenGame();
+
             }   //Main      
                 
 
